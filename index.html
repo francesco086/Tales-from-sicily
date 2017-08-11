@@ -77,15 +77,60 @@
              <div id="map"></div>
              <script>
                function initMap() {
-                 var uluru = {lat: -25.363, lng: 131.044};
-                 var map = new google.maps.Map(document.getElementById('map'), {
+                  var sicily_center = {lat: 37.621808, lng: 14.149413};
+                  var palermo_geo = {lat: 38.115947, lng: 13.359003};
+                  var catania_geo = {lat: 37.507306, lng: 15.077859};
+                  
+                  var palermo_contents = '<div id="content">'+
+                  '<div id="siteNotice">'+
+                  '</div>'+
+                  '<div id="bodyContent">'+
+                  '<p><a href="https://francesco086.github.io/Tales-from-sicily/l_ondina.html">'+
+                  'L\'ondina / The little wave</a></p>'+
+                  '</div>'+
+                  '</div>';
+                  var palermo_infowindow = new google.maps.InfoWindow({
+                      content: palermo_contents
+                    });
+                    
+                  var catania_contents = '<div id="content">'+
+                  '<div id="siteNotice">'+
+                  '</div>'+
+                  '<div id="bodyContent">'+
+                  '<p><a href="https://francesco086.github.io/Tales-from-sicily/il_cavallo_del_vescovo.html">'+
+                  'Il cavallo del vescovo / The bishop\'s horse</a></p>'+
+                  '</div>'+
+                  '</div>';
+                  var catania_infowindow = new google.maps.InfoWindow({
+                      content: catania_contents
+                    });
+                 
+                  var map = new google.maps.Map(document.getElementById('map'), {
                    zoom: 4,
                    center: uluru
                  });
-                 var marker = new google.maps.Marker({
-                   position: uluru,
-                   map: map
-                 });
+                 
+                 var palermo_marker = new google.maps.Marker({
+                      position: palermo_geo,
+                      map: map,
+                      draggable: false,
+                      animation: google.maps.Animation.DROP
+                    });
+                  palermo_marker.addListener('click', function() {
+                      palermo_infowindow.open(map, palermo_marker);
+                    });
+                 
+                  var catania_marker = new google.maps.Marker({
+                     position: catania_geo,
+                     map: map,
+                     draggable: false,
+                     animation: google.maps.Animation.DROP
+                   });
+                   catania_marker.addListener('click', function() {
+                       catania_infowindow.open(map, catania_marker);
+                     });
+                   
+                  
                }
              </script>
              <script async defer
