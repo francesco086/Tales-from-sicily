@@ -25,6 +25,12 @@
      .navbar-space {
         margin-bottom: 70px;
      }
+     
+     #map {
+       height: 400px;
+       width: 100%;
+      }
+      
    </style>
       
 </head>
@@ -50,6 +56,7 @@
                <ul class="nav navbar-nav navbar-right">
                    <li class="hidden"><a href="#page-top"></a></li>
                    <li><a lass="page-scroll" href="l_ondina.html">L'ondina / The little wave</a></li>
+                   <li><a lass="page-scroll" href="il_cavallo_del_vescovo.html">Il cavallo del vescovo / The bishop's horse</a></li>
                </ul>
            </div>
        </div>
@@ -62,6 +69,30 @@
          <h1>Tales from Sicily</h1>
          
          <p>Dear web-sailor, welcome to this hidden small island. Take your time to explore its innerland and hear the tales told by its inhabitants, you will find them absolutely amusing!</p>
+         
+         
+         
+         
+         <h3>My Google Maps Demo</h3>
+             <div id="map"></div>
+             <script>
+               function initMap() {
+                 var uluru = {lat: -25.363, lng: 131.044};
+                 var map = new google.maps.Map(document.getElementById('map'), {
+                   zoom: 4,
+                   center: uluru
+                 });
+                 var marker = new google.maps.Marker({
+                   position: uluru,
+                   map: map
+                 });
+               }
+             </script>
+             <script async defer
+             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsLxfiU_6SuU0waiXOXAql8L0leXKuxz0&callback=initMap">
+             </script>
+         
+         
          
          
       </div>
