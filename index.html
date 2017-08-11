@@ -29,6 +29,7 @@
      #map {
        height: 400px;
        width: 400px;
+       margin: 0 auto 0 auto;
       }
       
    </style>
@@ -71,10 +72,9 @@
          <p>Dear web-sailor, welcome to this hidden small island. Take your time to explore its innerland and hear the tales told by its inhabitants, you will find them absolutely amusing!</p>
          
          
+         <div class="well well-lg">
          
-         <div class="well">
-         
-            <div class ="center-box" id="map"></div>
+            <div id="map"></div>
             <script>
               function initMap() {
                  var sicily_center = {lat: 37.621808, lng: 14.149413};
@@ -136,9 +136,8 @@
             <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsLxfiU_6SuU0waiXOXAql8L0leXKuxz0&callback=initMap">
             </script>
-            
-         </div>
          
+         </div>
          
          
          
