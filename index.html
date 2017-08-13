@@ -2,43 +2,43 @@
 <html lang="en">
 
 <head>
-     
+
    <title>Tales from Sicily</title>
-    
-   <meta charset="utf-8"> 
+
+   <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-   
+
    <!--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-   
+
    <link rel="stylesheet" href="/Users/francesco086/Code/bootstrap-3.3.7-dist/css/bootstrap.min.css">
    <script src="/Users/francesco086/Code/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-   
-   
+
+
    <style>
      @media screen and (max-width: 768px) {
          body { padding-top: 0px; }
      }
-     
+
      .navbar-space {
         margin-bottom: 70px;
      }
-     
+
      #map {
        height: 400px;
        width: 400px;
        margin: 0 auto 0 auto;
       }
-      
+
    </style>
-      
+
 </head>
 
 
 <body id="page-top" class="index">
-   
+
    <nav class="navbar navbar-default navbar-fixed-top">
        <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
@@ -62,56 +62,56 @@
            </div>
        </div>
    </nav>
-   
+
    <section id="titolo">
       <div class="container-fluid">
          <p class="navbar-space"></p>
-         
+
          <h1>Tales from Sicily</h1>
-         
+
          <p>Dear web-sailor, welcome to this hidden small island. Take your time to explore its innerland and hear the tales told by its inhabitants, you will find them absolutely amusing!</p>
-         
-         
+
+
          <div class="well well-lg">
-         
+
             <div id="map"></div>
             <script>
               function initMap() {
                  var sicily_center = {lat: 37.621808, lng: 14.149413};
                  var palermo_geo = {lat: 38.115947, lng: 13.359003};
                  var catania_geo = {lat: 37.507306, lng: 15.077859};
-                 
+
                  var palermo_contents = '<div id="content">'+
                  '<div id="siteNotice">'+
                  '</div>'+
                  '<div id="bodyContent">'+
                  '<h5>Palermo:</h5>'+
-                 '<p><a href="https://francesco086.github.io/Tales-from-sicily/l_ondina.html">'+
+                 '<p><a href="https://francesco086.github.io/talesfromsicily/l_ondina.html">'+
                  'L\'ondina / The little wave</a></p>'+
                  '</div>'+
                  '</div>';
                  var palermo_infowindow = new google.maps.InfoWindow({
                      content: palermo_contents
                    });
-                   
+
                  var catania_contents = '<div id="content">'+
                  '<div id="siteNotice">'+
                  '</div>'+
                  '<div id="bodyContent">'+
                  '<h5>Catania:</h5>'+
-                 '<p><a href="https://francesco086.github.io/Tales-from-sicily/il_cavallo_del_vescovo.html">'+
+                 '<p><a href="https://francesco086.github.io/talesfromsicily/il_cavallo_del_vescovo.html">'+
                  'Il cavallo del vescovo / The bishop\'s horse</a></p>'+
                  '</div>'+
                  '</div>';
                  var catania_infowindow = new google.maps.InfoWindow({
                      content: catania_contents
                    });
-                
+
                  var map = new google.maps.Map(document.getElementById('map'), {
                   zoom: 7,
                   center: sicily_center
                 });
-                
+
                 var palermo_marker = new google.maps.Marker({
                      position: palermo_geo,
                      map: map,
@@ -121,7 +121,7 @@
                  palermo_marker.addListener('click', function() {
                      palermo_infowindow.open(map, palermo_marker);
                    });
-                
+
                  var catania_marker = new google.maps.Marker({
                     position: catania_geo,
                     map: map,
@@ -131,21 +131,21 @@
                   catania_marker.addListener('click', function() {
                       catania_infowindow.open(map, catania_marker);
                     });
-                  
-                 
+
+
               }
             </script>
             <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsLxfiU_6SuU0waiXOXAql8L0leXKuxz0&callback=initMap">
             </script>
-         
+
          </div>
-         
-         
-         
+
+
+
       </div>
    </section>
-   
+
 
 </body>
 
