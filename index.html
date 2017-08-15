@@ -3,148 +3,136 @@
 
 <head>
 
-   <title>Tales from Sicily</title>
+    <title>Tales from Sicily</title>
 
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
-   <!--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-   <link rel="stylesheet" href="/Users/francesco086/Code/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-   <script src="/Users/francesco086/Code/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <!--
+    <link rel="stylesheet" href="/Users/francesco086/Code/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="/Users/francesco086/Code/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+-->
 
 
-   <style>
-     @media screen and (max-width: 768px) {
-         body { padding-top: 0px; }
-     }
+<style>
 
-     .navbar-space {
-        margin-bottom: 70px;
-     }
+#map {
+    height: 400px;
+    width: 400px;
+    margin: 0 auto 0 auto;
+}
 
-     #map {
-       height: 400px;
-       width: 400px;
-       margin: 0 auto 0 auto;
-      }
-
-   </style>
+</style>
 
 </head>
 
 
 <body id="page-top" class="index">
 
-   <nav class="navbar navbar-default navbar-fixed-top">
-       <div class="container">
-           <!-- Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header page-scroll">
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                   <span class="sr-only">Toggle navigation</span>
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-               </button>
-               <a class="navbar-brand page-scroll" href="index.html">Tales from Sicily</a>
-           </div>
+    <ul class="nav nav-pills">
 
-           <!-- Collect the nav links, forms, and other content for toggling -->
-           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-               <ul class="nav navbar-nav navbar-right">
-                   <li class="hidden"><a href="#page-top"></a></li>
-                   <li><a lass="page-scroll" href="l_ondina.html">L'ondina / The little wave</a></li>
-                   <li><a lass="page-scroll" href="il_cavallo_del_vescovo.html">Il cavallo del vescovo / The bishop's horse</a></li>
-               </ul>
-           </div>
-       </div>
-   </nav>
+        <li role="presentation" class="active"><a href="index.html">Home page</a></li>
 
-   <section id="titolo">
-      <div class="container-fluid">
-         <p class="navbar-space"></p>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                Tales <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="l_ondina.html">L'ondina / The little wave</a></li>
+                <li><a href="il_cavallo_del_vescovo.html">Il cavallo del vescovo / The bishop's horse</a></li>
+                <li><a href="la_coppa_e_la_collana.html">La coppa e la collana / The cup and the necklace</a></li>
+            </ul>
+        </li>
 
-         <h1>Tales from Sicily</h1>
-
-         <p>Dear web-sailor, welcome to this hidden small island. Take your time to explore its innerland and hear the tales told by its inhabitants, you will find them absolutely amusing!</p>
+    </ul>
 
 
-         <div class="well well-lg">
+    <section id="titolo">
+        <div class="container-fluid my-content">
 
-            <div id="map"></div>
-            <script>
-              function initMap() {
-                 var sicily_center = {lat: 37.621808, lng: 14.149413};
-                 var palermo_geo = {lat: 38.115947, lng: 13.359003};
-                 var catania_geo = {lat: 37.507306, lng: 15.077859};
+            <h1>Tales from Sicily</h1>
 
-                 var palermo_contents = '<div id="content">'+
-                 '<div id="siteNotice">'+
-                 '</div>'+
-                 '<div id="bodyContent">'+
-                 '<h5>Palermo:</h5>'+
-                 '<p><a href="https://francesco086.github.io/talesfromsicily/l_ondina.html">'+
-                 'L\'ondina / The little wave</a></p>'+
-                 '</div>'+
-                 '</div>';
-                 var palermo_infowindow = new google.maps.InfoWindow({
-                     content: palermo_contents
-                   });
+            <p>Dear web-sailor, welcome to this hidden small island. Take your time to explore its innerland and hear the tales told by its inhabitants, you will find them absolutely amusing!</p>
 
-                 var catania_contents = '<div id="content">'+
-                 '<div id="siteNotice">'+
-                 '</div>'+
-                 '<div id="bodyContent">'+
-                 '<h5>Catania:</h5>'+
-                 '<p><a href="https://francesco086.github.io/talesfromsicily/il_cavallo_del_vescovo.html">'+
-                 'Il cavallo del vescovo / The bishop\'s horse</a></p>'+
-                 '</div>'+
-                 '</div>';
-                 var catania_infowindow = new google.maps.InfoWindow({
-                     content: catania_contents
-                   });
 
-                 var map = new google.maps.Map(document.getElementById('map'), {
-                  zoom: 7,
-                  center: sicily_center
-                });
+            <div class="well well-lg">
 
-                var palermo_marker = new google.maps.Marker({
-                     position: palermo_geo,
-                     map: map,
-                     draggable: false,
-                     animation: google.maps.Animation.DROP
-                   });
-                 palermo_marker.addListener('click', function() {
-                     palermo_infowindow.open(map, palermo_marker);
-                   });
+                <div id="map"></div>
+                <script>
+                function initMap() {
+                    var sicily_center = {lat: 37.621808, lng: 14.149413};
+                    var palermo_geo = {lat: 38.115947, lng: 13.359003};
+                    var catania_geo = {lat: 37.507306, lng: 15.077859};
 
-                 var catania_marker = new google.maps.Marker({
-                    position: catania_geo,
-                    map: map,
-                    draggable: false,
-                    animation: google.maps.Animation.DROP
-                  });
-                  catania_marker.addListener('click', function() {
-                      catania_infowindow.open(map, catania_marker);
+                    var palermo_contents = '<div id="content">'+
+                    '<div id="siteNotice">'+
+                    '</div>'+
+                    '<div id="bodyContent">'+
+                    '<h5>Palermo:</h5>'+
+                    '<p><a href="l_ondina.html">'+
+                    'L\'ondina / The little wave</a></p>'+
+                    '</div>'+
+                    '</div>';
+                    var palermo_infowindow = new google.maps.InfoWindow({
+                        content: palermo_contents
+                    });
+
+                    var catania_contents = '<div id="content">'+
+                    '<div id="siteNotice">'+
+                    '</div>'+
+                    '<div id="bodyContent">'+
+                    '<h5>Catania:</h5>'+
+                    '<p><a href="il_cavallo_del_vescovo.html">'+
+                    'Il cavallo del vescovo / The bishop\'s horse</a></p>'+
+                    '</div>'+
+                    '</div>';
+                    var catania_infowindow = new google.maps.InfoWindow({
+                        content: catania_contents
+                    });
+
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 7,
+                        center: sicily_center
+                    });
+
+                    var palermo_marker = new google.maps.Marker({
+                        position: palermo_geo,
+                        map: map,
+                        draggable: false,
+                        animation: google.maps.Animation.DROP
+                    });
+                    palermo_marker.addListener('click', function() {
+                        palermo_infowindow.open(map, palermo_marker);
+                    });
+
+                    var catania_marker = new google.maps.Marker({
+                        position: catania_geo,
+                        map: map,
+                        draggable: false,
+                        animation: google.maps.Animation.DROP
+                    });
+                    catania_marker.addListener('click', function() {
+                        catania_infowindow.open(map, catania_marker);
                     });
 
 
-              }
-            </script>
-            <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsLxfiU_6SuU0waiXOXAql8L0leXKuxz0&callback=initMap">
-            </script>
+                }
+                </script>
+                <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsLxfiU_6SuU0waiXOXAql8L0leXKuxz0&callback=initMap">
+                </script>
 
-         </div>
+            </div>
 
 
 
-      </div>
-   </section>
+        </div>
+    </section>
 
 
 </body>
