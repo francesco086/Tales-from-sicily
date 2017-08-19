@@ -68,6 +68,7 @@
                     var sicily_center = {lat: 37.621808, lng: 14.149413};
                     var palermo_geo = {lat: 38.115947, lng: 13.359003};
                     var catania_geo = {lat: 37.507306, lng: 15.077859};
+                    var messina_geo = {lat: 38.190718, lng: 15.551209};
 
                     var palermo_contents = '<div id="content">'+
                     '<div id="siteNotice">'+
@@ -95,6 +96,19 @@
                         content: catania_contents
                     });
 
+                    var messina_contents = '<div id="content">'+
+                    '<div id="siteNotice">'+
+                    '</div>'+
+                    '<div id="bodyContent">'+
+                    '<h5>Messina:</h5>'+
+                    '<p><a href="la_coppa_e_la_collana.html">'+
+                    'La coppa e la collana / The cup and the necklace</a></p>'+
+                    '</div>'+
+                    '</div>';
+                    var messina_infowindow = new google.maps.InfoWindow({
+                        content: messina_contents
+                    });
+
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 7,
                         center: sicily_center
@@ -118,6 +132,16 @@
                     });
                     catania_marker.addListener('click', function() {
                         catania_infowindow.open(map, catania_marker);
+                    });
+
+                    var messina_marker = new google.maps.Marker({
+                        position: messina_geo,
+                        map: map,
+                        draggable: false,
+                        animation: google.maps.Animation.DROP
+                    });
+                    messina_marker.addListener('click', function() {
+                        messina_infowindow.open(map, messina_marker);
                     });
 
 
